@@ -1,25 +1,92 @@
 \documentclass[12pt]{book}
 \usepackage[utf8]{inputenc}
+%%%%%%%%%% Español %%%%%%%%%%
+\usepackage[T1]{fontenc}
 \usepackage[spanish]{babel}
-\usepackage{chronosys}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-
-\title{Calladium}
-\author{Libertad Pantoja}
-\date{July 2021}
-
-\begin{document}
-
-%%%%%%%%%%%%%%%%%%%%% Cubierta %%%%%%%%%%%%%
-\clearpage
-%% temporary titles
+%%%%%%%%%% Portada %%%%%%%%%%
+\usepackage[textwidth = 16cm]{geometry}
+\usepackage[x11names]{xcolor}
+\usepackage{graphicx}
+\usepackage{lipsum}% Used for dummy text.
+\definecolor{titlepagecolor}{cmyk}{75,68,67,90}
+\definecolor{titlepagecolor2}{rgb}{1.0, 0.08, 0.58}
 % command to provide stretchy vertical space in proportion
 \newcommand\nbvspace[1][3]{\vspace*{\stretch{#1}}}
-% allow some slack to avoid under/overfull boxes
-\newcommand\nbstretchyspace{\spaceskip0.5em plus 0.25em minus 0.25em}
 % To improve spacing on titlepages
 \newcommand{\nbtitlestretch}{\spaceskip0.6em}
+
+\definecolor{emerald}{rgb}{0.31, 0.78, 0.47}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%% Licencia %%%%%%%
+\usepackage{ccicons}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%% Vínculos %%%%%%%%%%
+\usepackage{hyperref}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%% Línea del tiempo %%%%%%
+\usepackage{chronosys}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%% Colofón %%%%%%%%%%
+\usepackage[%
+title={Colofón}, titlestyle=scshape, titlesize=30pt, titlealign=c, parstyle=itshape, parsize=12pt, parlead=15pt, noclrdblpg ]{colophon}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{document}
+\frontmatter
+
+% ---------- Portada ----------
+\begin{titlepage}
+\begin{center}
+\fontfamily{serif}\selectfont
+\pagecolor{titlepagecolor}
+\noindent
+\color{white}
+\par
+\nbvspace[0.5]
+{\Huge \bfseries \nbtitlestretch Calladium} 
+\noindent \textcolor{DeepPink3}{\rule{16cm}{0.5mm}}
+\vfill
+\noindent \textcolor{emerald}{\rule{16cm}{0.5mm}}
+\\
+\vskip\baselineskip
+\noindent{\LARGE Sueños pandémicos}
+\nbvspace[0.5]
+\end{center}
+
+\end{titlepage}
+% --------------------
+
+% ---------- Guarda 1 ----------
+\pagecolor{titlepagecolor2}
+\newpage
+
+logo calladium
+% --------------------
+
+% ---------- Guarda 2 ----------
+\newpage
+Algo
+% --------------------
+
+
+% ---------- Cubierta ----------
+\clearpage
+\nopagecolor% Use this to restore the color pages to white
+% allow some slack to avoid under/overfull boxes
+\newcommand\nbstretchyspace{\spaceskip0.5em plus 0.25em minus 0.25em}
+
 \pagestyle{empty}
 \begin{center}
 \bfseries
@@ -33,9 +100,6 @@ Calladium}
 
 Sueños Pandémicos\\
 \nbvspace[1]
-\small Por\\
-\Large Libertad Pantoja\\[0.5em]
-
 
 \nbvspace[2]
 
@@ -43,19 +107,55 @@ Sueños Pandémicos\\
 \nbvspace[3]
 \normalsize
 
-DOHA\\
 \large
-PUBLISHED IN THE WILD
+ Libertad Pantoja
 \nbvspace[1]
 \end{center}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% --------------------
+
+% ---------- Licencias ----------
+\newpage
+\thispagestyle{empty}
+~\vfill
+\noindent \textsc{\textbf{Calladium. Sueños pandémicos}}\\ % Nombre
+\\
+\noindent Primera versión, 2021
+\\
+\noindent  \copyright  2021, del texto e ilustraciones: Libertad Pantoja\\ % Copyright notice
+Licencia de la plantilla \noindent Creative Commons \ccby \\
+\\
+\includegraphics{ffugu.png}
+\\\\
+\noindent \textsc{Edición:} \textit{Edgar Ramírez Ruíz, Aaron Martínez Casillas y José Sánchez Sayago}\\ % License information
+\noindent \textsc{Diseño:} \textit{Carlo Fabrizzio Moncada y Libertad Pantoja Hernández}\\
+\noindent Primera versión elaborada en agosto de 2021 \\\\ % Printing/edition date 
+
+\noindent \textsc{Calladium}\\
+\noindent \textsc{ISBN: Pendiente de trámite}\\
+\noindent \small{
+Se permite la reproducción total o parcial de este libro, así
+como su transmisión sin fines de lucro por cualquier medio,
+ respetando los derechos de autor con respecto al texto e ilustraciones.\\
+La plantilla de Calladium se puede copiar y redistribuir en cualquier formato. Eres libre
+de remezclar, transformar y construir a partir de esta obra para cualquier propósito, incluso uno comercial siempre y cuando des crédito a Calladium, el proyecto original.
+\\
+\\
+\textbf{Hecho en la Web}
+ 
+ }
+% --------------------
+
+
+\mainmatter
 
 \tableofcontents
 
-
+% ---------- Prólogo ----------
 \chapter{Prólogo}
 Lorem ipsum...
+% --------------------
 
+% ---------- Línea del tiempo ----------
 \chapter{Línea del tiempo}
 
 \startchronology
@@ -64,7 +164,9 @@ Lorem ipsum...
 \chronoevent{2019}{First documented case}
 \chronoevent{2021}{Pandemics in Mexico}
 \stopchronology
+% --------------------
 
+% ---------- Contenido del libro de sueños ----------
 
 \chapter{Pre-pandemia}
 
@@ -132,6 +234,38 @@ Salgo de ahí. Voy a buscar otra librería que ya ha salido en mis sueños, pero
 Yo tomo las clases en Literaria con mi tío Mau. Moni, su hermana, trabaja para literaria y nos consigue las sesiones antes. \\
 En el trabajo tengo que convertir muchos sitios web en sitios rusos y me siento abrumada porque tal vez tenga que estudiar matemáticas avanzadas.\\
 Mau es un niñito. Hay un murciélago.
+% --------------------
 
 
+% ---------- Agradecimientos ----------
+\newpage
+\chapter*{Agradecimientos}
+\thispagestyle{empty}
+
+I like to acknowledge ...
+% --------------------
+
+% ---------- Colofón (guarda 3) ----------
+\newpage
+
+\pagecolor{titlepagecolor2}
+\color{white}
+
+\begin{colophon} 
+Calladium. Sueños pandémicos.
+\end{colophon}
+% --------------------
+
+% ---------- Guarda 4 ----------
+\newpage
+Logo calladium
+% --------------------
+
+% ---------- Contraportada ----------
+\clearpage
+\newpage
+
+\pagecolor{titlepagecolor}
+Logo calladium
+% --------------------
 \end{document}
