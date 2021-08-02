@@ -8,16 +8,12 @@
 %%%%%%%%%% Portada %%%%%%%%%%
 \usepackage[textwidth = 16cm]{geometry}
 \usepackage[x11names]{xcolor}
-\usepackage{graphicx}
-\usepackage{lipsum}% Used for dummy text.
 \definecolor{titlepagecolor}{cmyk}{75,68,67,90}
 \definecolor{titlepagecolor2}{rgb}{1.0, 0.08, 0.58}
+\definecolor{emerald}{rgb}{0.31, 0.78, 0.47}
+\definecolor{deeppink}{rgb}{1.0, 0.08, 0.58}
 % command to provide stretchy vertical space in proportion
 \newcommand\nbvspace[1][3]{\vspace*{\stretch{#1}}}
-% To improve spacing on titlepages
-\newcommand{\nbtitlestretch}{\spaceskip0.6em}
-
-\definecolor{emerald}{rgb}{0.31, 0.78, 0.47}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -51,15 +47,13 @@ title={Colofón}, titlestyle=scshape, titlesize=30pt, titlealign=c, parstyle=its
 \begin{center}
 \fontfamily{serif}\selectfont
 \pagecolor{titlepagecolor}
-\noindent
 \color{white}
-\par
 \nbvspace[0.5]
-{\Huge \bfseries \nbtitlestretch Calladium} 
-\noindent \textcolor{DeepPink3}{\rule{16cm}{0.5mm}}
+\noindent
+{\Huge \bfseries  Calladium} 
+\noindent \textcolor{deeppink}{\rule{16cm}{0.5mm}}
 \vfill
 \noindent \textcolor{emerald}{\rule{16cm}{0.5mm}}
-\\
 \vskip\baselineskip
 \noindent{\LARGE Sueños pandémicos}
 \nbvspace[0.5]
@@ -71,40 +65,37 @@ title={Colofón}, titlestyle=scshape, titlesize=30pt, titlealign=c, parstyle=its
 % ---------- Guarda 1 ----------
 \pagecolor{titlepagecolor2}
 \newpage
+\thispagestyle{empty}
 
 logo calladium
 % --------------------
 
 % ---------- Guarda 2 ----------
 \newpage
+\thispagestyle{empty}
+
 Algo
 % --------------------
 
 
 % ---------- Cubierta ----------
 \clearpage
-\nopagecolor% Use this to restore the color pages to white
-% allow some slack to avoid under/overfull boxes
-\newcommand\nbstretchyspace{\spaceskip0.5em plus 0.25em minus 0.25em}
 
-\pagestyle{empty}
+\nopagecolor% Use this to restore the color pages to white
+
+\thispagestyle{empty}
 \begin{center}
 \bfseries
 \nbvspace[1]
 \Huge
-{\nbtitlestretch\huge
+{
 Calladium}
-
-\nbvspace[1]
-\normalsize
-
+\vskip\baselineskip
+\Large
 Sueños Pandémicos\\
-\nbvspace[1]
-
 \nbvspace[2]
-
 \includegraphics[width=1.5in]{cal.jpeg}
-\nbvspace[3]
+\nbvspace[2]
 \normalsize
 
 \large
@@ -117,21 +108,23 @@ Sueños Pandémicos\\
 \newpage
 \thispagestyle{empty}
 ~\vfill
-\noindent \textsc{\textbf{Calladium. Sueños pandémicos}}\\ % Nombre
-\\
+\noindent 
+\textsc{\textbf{Calladium. Sueños pandémicos}} % Nombre
+\vskip\baselineskip
 \noindent Primera versión, 2021
 \\
 \noindent  \copyright  2021, del texto e ilustraciones: Libertad Pantoja\\ % Copyright notice
 Licencia de la plantilla \noindent Creative Commons \ccby \\
-\\
+\vskip\baselineskip
 \includegraphics{ffugu.png}
-\\\\
+\vskip\baselineskip
 \noindent \textsc{Edición:} \textit{Edgar Ramírez Ruíz, Aaron Martínez Casillas y José Sánchez Sayago}\\ % License information
 \noindent \textsc{Diseño:} \textit{Carlo Fabrizzio Moncada y Libertad Pantoja Hernández}\\
-\noindent Primera versión elaborada en agosto de 2021 \\\\ % Printing/edition date 
-
+\noindent Primera versión elaborada en agosto de 2021  % Printing/edition date 
+\vskip\baselineskip
 \noindent \textsc{Calladium}\\
-\noindent \textsc{ISBN: Pendiente de trámite}\\
+\noindent \textsc{ISBN: Pendiente de trámite}
+\vskip\baselineskip
 \noindent \small{
 Se permite la reproducción total o parcial de este libro, así
 como su transmisión sin fines de lucro por cualquier medio,
@@ -152,24 +145,28 @@ de remezclar, transformar y construir a partir de esta obra para cualquier prop�
 
 % ---------- Prólogo ----------
 \chapter{Prólogo}
-Lorem ipsum...
+En la Capítulo \ref{prepandemia} Pre-pandemia, se encuentran algunos sueños que van desde un año antes del inicio de la pandemia hasta el primero de marzo del 2020. 
 % --------------------
 
 % ---------- Línea del tiempo ----------
 \chapter{Línea del tiempo}
 
+\catcode `\@=11
+\def\chron@selectmonth#1{\ifcase#1\or enero\or febrero\or
+marzo\or abril \or mayo \or junio \or julio \or agosto \or
+septiembre \or octubre \or noviembre \or diciembre\fi}
 \startchronology
-\startchronology
-[startyear=2019,stopyear=2021]
-\chronoevent{2019}{First documented case}
-\chronoevent{2021}{Pandemics in Mexico}
+[startyear=2019,stopyear=2022]
+\chronoperiode{2020}{2022}{Pandemia}
+\chronoevent{17/11/2019}{Primer caso de COVID documentado}
+\chronoevent{1/03/2021}{Inicia la pandemia en méxico}
 \stopchronology
 % --------------------
 
 % ---------- Contenido del libro de sueños ----------
 
 \chapter{Pre-pandemia}
-
+\label{prepandemia}
 \subsection*{\hfill 15 de abril 2019}
 
 Tengo un jardín amplio en el techo del edificio lleno de helechos y plantas que debo cuidar.
@@ -269,3 +266,4 @@ Logo calladium
 Logo calladium
 % --------------------
 \end{document}
+
