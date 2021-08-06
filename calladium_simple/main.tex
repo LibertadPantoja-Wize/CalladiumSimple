@@ -1,5 +1,6 @@
 \documentclass[12pt]{book}
 \usepackage[utf8]{inputenc}
+\usepackage{times}
 %%%%%%%%%% Español %%%%%%%%%%
 \usepackage[T1]{fontenc}
 \usepackage[spanish]{babel}
@@ -8,10 +9,15 @@
 %%%%%%%%%% Portada %%%%%%%%%%
 \usepackage[textwidth = 16cm]{geometry}
 \usepackage[x11names]{xcolor}
+\usepackage{adjustbox}
 \definecolor{titlepagecolor}{cmyk}{75,68,67,90}
 \definecolor{titlepagecolor2}{rgb}{1.0, 0.08, 0.58}
 \definecolor{emerald}{rgb}{0.31, 0.78, 0.47}
-\definecolor{deeppink}{rgb}{1.0, 0.08, 0.58}
+\definecolor{deeppink}{HTML}{D14064}
+\definecolor{lowpink}{HTML}{ffe6ec}
+
+\usepackage{geometry}
+
 % command to provide stretchy vertical space in proportion
 \newcommand\nbvspace[1][3]{\vspace*{\stretch{#1}}}
 
@@ -37,6 +43,7 @@
 title={Colofón}, titlestyle=scshape, titlesize=30pt, titlealign=c, parstyle=itshape, parsize=12pt, parlead=15pt, noclrdblpg ]{colophon}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\usepackage{graphicx}
 
 
 \begin{document}
@@ -44,37 +51,46 @@ title={Colofón}, titlestyle=scshape, titlesize=30pt, titlealign=c, parstyle=its
 
 % ---------- Portada ----------
 \begin{titlepage}
+\newgeometry{top=1in,bottom=1in,right=0in,left=0in}
+\thispagestyle{empty}
+
 \begin{center}
-\fontfamily{serif}\selectfont
 \pagecolor{titlepagecolor}
 \color{white}
 \nbvspace[0.5]
 \noindent
-{\Huge \bfseries  Calladium} 
-\noindent \textcolor{deeppink}{\rule{16cm}{0.5mm}}
-\vfill
-\noindent \textcolor{emerald}{\rule{16cm}{0.5mm}}
+{\fontsize{55}{0}\selectfont  Calladium} 
+\nbvspace[2]
 \vskip\baselineskip
-\noindent{\LARGE Sueños pandémicos}
+\adjincludegraphics[width=\paperwidth]{cover.png}
+\vskip\baselineskip
+\nbvspace[2]
+\noindent{\fontsize{28}{0}\selectfont Sueños Pandémicos}
 \nbvspace[0.5]
 \end{center}
-
 \end{titlepage}
 % --------------------
 
-% ---------- Guarda 1 ----------
-\pagecolor{titlepagecolor2}
+% ---------- Forros  ----------
+\pagecolor{titlepagecolor}
 \newpage
 \thispagestyle{empty}
+\includegraphics{cal_rosa.png}
+% --------------------
+\clearpage
 
-logo calladium
+
+% ---------- Guarda 1 ----------
+\pagecolor{lowpink}
+\newpage
+\thispagestyle{empty}
+\includegraphics{cal_rosa.png}
 % --------------------
 
 % ---------- Guarda 2 ----------
 \newpage
 \thispagestyle{empty}
-
-Algo
+\includegraphics{cal_rosa.png}
 % --------------------
 
 
@@ -85,21 +101,23 @@ Algo
 
 \thispagestyle{empty}
 \begin{center}
-\bfseries
+
 \nbvspace[1]
-\Huge
-{
+
+{\fontsize{40}{0}\selectfont
 Calladium}
 \vskip\baselineskip
-\Large
-Sueños Pandémicos\\
+\vskip\baselineskip
+
+{\fontsize{28}{0}\selectfont
+Sueños Pandémicos}\\
 \nbvspace[2]
-\includegraphics[width=1.5in]{cal.jpeg}
+\includegraphics[width=230px]{cubierta_int.png}
 \nbvspace[2]
 \normalsize
 
-\large
- Libertad Pantoja
+{\fontsize{28}{0}\selectfont
+ Libertad Pantoja}
 \nbvspace[1]
 \end{center}
 % --------------------
@@ -116,10 +134,10 @@ Sueños Pandémicos\\
 \noindent  \copyright  2021, del texto e ilustraciones: Libertad Pantoja\\ % Copyright notice
 Licencia de la plantilla \noindent Creative Commons \ccby \\
 \vskip\baselineskip
-\includegraphics{ffugu.png}
+\includegraphics{cal_negro.png}
 \vskip\baselineskip
 \noindent \textsc{Edición:} \textit{Edgar Ramírez Ruíz, Aaron Martínez Casillas y José Sánchez Sayago}\\ % License information
-\noindent \textsc{Diseño:} \textit{Carlo Fabrizzio Moncada y Libertad Pantoja Hernández}\\
+\noindent \textsc{Diseño:} \textit{Carlo Fabrizzio Moncada}\\
 \noindent Primera versión elaborada en agosto de 2021  % Printing/edition date 
 \vskip\baselineskip
 \noindent \textsc{Calladium}\\
@@ -145,7 +163,13 @@ de remezclar, transformar y construir a partir de esta obra para cualquier prop�
 
 % ---------- Prólogo ----------
 \chapter{Prólogo}
+
+Los sueños, como un mundo alterno nocturno y como fuente de la que abreva nuestra creatividad son un tema que nos ha fascinado a lo largo de nuestra historia. Jacobo Siruela en su libro, el mundo bajo los párpados, afirma que los sueños van más allá de fascinarse, son parte esencial de lo que somos.
+En este mundo alterno, como afirma Rafael Villegas, rara vez hay ficción. No existe la duda ante lo que vemos y vivimos.  
+
 En la Capítulo \ref{prepandemia} Pre-pandemia, se encuentran algunos sueños que van desde un año antes del inicio de la pandemia hasta el primero de marzo del 2020. 
+\vfill
+\hfill {\textbf{Libertad Pantoja}, Agosto 2021}
 % --------------------
 
 % ---------- Línea del tiempo ----------
@@ -156,8 +180,9 @@ En la Capítulo \ref{prepandemia} Pre-pandemia, se encuentran algunos sueños qu
 marzo\or abril \or mayo \or junio \or julio \or agosto \or
 septiembre \or octubre \or noviembre \or diciembre\fi}
 \startchronology
-[startyear=2019,stopyear=2022]
-\chronoperiode{2020}{2022}{Pandemia}
+[startyear=2019,stopyear=2022, color=lowpink]
+\definechronoperiode{MyPeriod}[color=deeppink, textdepth=0.35cm]
+\chronoMyPeriod{2020}{2022}{Pandemia}
 \chronoevent{17/11/2019}{Primer caso de COVID documentado}
 \chronoevent{1/03/2021}{Inicia la pandemia en méxico}
 \stopchronology
@@ -220,7 +245,8 @@ Me llevan a un parque fuera del centro comercial y me ponen de rodillas. Me van 
 
 \subsection*{\hfill 21 de noviembre de 2020}
 Rafa abre y cierra una cortina. Entre más la cierra, más trabajo me cuesta respirar. Cada vez que la abre entra una luz anaranjada en la habitación.
-27 de diciembre 2020
+
+\subsection*{\hfill27 de diciembre 2020}
 Quiero dominar los puertos para pescar camarones especiales para hacer un platillo delicioso.
 \\
 \\
@@ -238,32 +264,43 @@ Mau es un niñito. Hay un murciélago.
 \newpage
 \chapter*{Agradecimientos}
 \thispagestyle{empty}
-
-I like to acknowledge ...
+Muchas gracias a todo el equipo de Calladium (Aaron, Edgar, Fabrizzio, Pepe y Santi) por sus esfuerzos y sugerencias para que este proyecto llegará a buen fin en su primera etapa. Gracias a Rafael Villegas por sus generosos consejos acerca de cómo formular los sueños para acercarlos al lector. Gracias a Mariana Orantes por toda la retroalimentación durante la primera etapa de este proyecto. Gracias a Rafa Verduzco por la paciencia y la retroalimentación.Gracias a Samantha Pantoja y a Erick Mejía por sus observaciones.
 % --------------------
 
 % ---------- Colofón (guarda 3) ----------
 \newpage
+\thispagestyle{empty}
 
-\pagecolor{titlepagecolor2}
-\color{white}
+\pagecolor{lowpink}
+\color{deeppink}
 
 \begin{colophon} 
 Calladium. Sueños pandémicos.
 \end{colophon}
-% --------------------
 
+
+% --------------------
 % ---------- Guarda 4 ----------
 \newpage
-Logo calladium
+\thispagestyle{empty}
+
+\includegraphics{cal_rosa.png}
 % --------------------
 
-% ---------- Contraportada ----------
-\clearpage
+% ---------- Contraportada forros----------
+\newpage
+\pagecolor{titlepagecolor}
+\includegraphics{cal_rosa.png}
+% --------------------
+% ---------- Contraportada----------
 \newpage
 
 \pagecolor{titlepagecolor}
-Logo calladium
+\nbvspace[3]
+\hfill\includegraphics{cal-blanco-texto.png}\hfill
+\nbvspace[3]
+
 % --------------------
+
 \end{document}
 
